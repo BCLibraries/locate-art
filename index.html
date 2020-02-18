@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>O'Neill Library Shelf Location Chart</title>
+</head>
+<body onload="self.resizeTo(document.getElementById('floorpic').width+165, document.getElementById('floorpic').height+140); self.moveTo(0,0); myPosition()">
+<script src="myscript25t.js?version=1.9a"></script>
+<div style="position: absolute; top: 0; left: 0">
+
+    <!-- Map image -->
+    <img id="floorpic" src="ONL_3R_20130313_L.jpg">v2.0
+
+    <!-- Balloon with location -->
+    <div id="balloonpic" style="position: absolute; top: 335px; left: 486px;   padding-top: 4px; text-align: center; z-index: 100"><img src="balloon_t_LL.gif">
+        <span style="position: absolute; top: 5px; left: 3px; width: 140; color: #FFFFFF; font-weight: normal; font-family: sans-serif; font-size: 0.74em; margin-left: 2px">
+QL737.C25 C44 1993<br/>Otters /<br/><span style="font-size: 1.15em; font-weight: bold">Floor 3, Shelf 81</span></span></div>
+    <div onclick="document.getElementById('shelfnumpic').style.visibility = 'hidden';toggleHelp('bright')" id="shelfnumpic" style="position: absolute; top: 75px; left: 0; visibility: hidden; z-index: 150"><img src="ExplainAlma.jpg"></div>
+
+
+    <!-- Menu -->
+    <div id="cellbutton" style="position: absolute; cursor: pointer; top: 50px">
+        <img id="cellimg" src="cellmsgs_c2.gif" alt='Send text message' onclick="document.getElementById('phonepic').style.visibility = 'visible'; document.smsform.ac.focus()"></div>
+    <div id="feedback" style="position: absolute; cursor: pointer; top: 100px">
+        <img id="fbimg" src="feedback_dn_c2.gif" alt='Send feedback' onclick='popupMail("","1.10")'></div>
+    <div id="shelfnum" style="position: absolute; cursor: pointer; top: 150px">
+        <img id="shelfimg" src="shelfbtn_dn_c2.gif" alt='Explain shelf numbers' onclick="document.getElementById('shelfnumpic').style.visibility = 'visible';toggleHelp('dim')"></div>
+
+    <!-- Send SMS cellphone -->
+    <div id="phonepic" style="position: absolute; top: 100px; left: 200px; visibility: hidden; z-index: 105"><img src="map_phonepic.png">
+
+        <!-- I think this part just renders the phone picture and text. -->
+        <div style="position: absolute; top:50px; left: 48px; width: 160px; font-family: sans-serif; font-size: 10px; color: black; font-weight: bold">Send text to your cell phone:</div>
+        <div style="position: absolute; top:75px; left: 50px; width: 160px; font-family: sans-serif; font-size: 13px; font-weight: bold">QL737.C25 C44 1993<br>Otters /<br>is in the O'Neill Library,<br>Floor 3, Shelf 81</div>
+        <div onclick="startRequest('*')" style="position: absolute; top: 350px; left: 107px; cursor: pointer; color: yellow; font-family: sans-serif; font-size: 13px; font-weight: bold">SEND</div>
+        <div onclick="document.getElementById('phonepic').style.visibility = 'hidden';" style="position: absolute; top: 350px; left: 198px; cursor: pointer; color: red; font-family: sans-serif; font-size: 12px; font-weight: bold">DONE</div>
+        <div onclick="document.getElementById('phonepic').style.visibility = 'hidden';" style="position: absolute; top: 15px; left: 220px; width: 14; cursor: pointer; background-color: red; color: white; font-family: sans-serif; font-size: 14px; text-align: center; font-weight: bold">X</div>
+        <div style="position: absolute; top: 214px; left: 50px; width: 150px; color: black; font-family: sans-serif; font-size: 12px"> Enter your phone number:<br><br><br>Then click the SEND button</div>
+
+        <div id="smsbox" style="position: absolute; top: 229px; left:50px; height: 22px; width: 160px; font-family: sans-serif; font-size: 20px; z-index: 100; color: black">
+
+            <!-- I think the form part is all we need to keep. -->
+            <form name="smsform">
+                (<input name="ac" type="text" size="1" onKeyDown="TabNext(this,'down',3)" onKeyUp="TabNext(this,'up',3,this.form.exchange)">)
+                <input name="exchange" type="text" size="1" onKeyDown="TabNext(this,'down',3)" onKeyUp="TabNext(this,'up',3,this.form.telno)">-<input name="telno" type="text" size="1">
+                <input type="hidden" id="idtext" name="textmessage" value="QL737.C25 C44 1993
+Otters /
+is in the O'Neill Library,
+Floor 3, Shelf 81">
+            </form>
+
+
+            <div id="framediv" style="position: absolute; top: -80px; left: -115px; width: 362px; visibility: hidden; z-index: 90; border-style: outset; background-color: #EEEEFF">
+                <iframe id="textframe" height="232" width="360" src="connectmsg.html"></iframe>
+            </div>
+
+        </div>
+        <!-- End send SMS cellphone -->
+
+
+</body>
+</html>
