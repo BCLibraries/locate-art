@@ -1,0 +1,71 @@
+/*!
+ * Custom for Locate!
+ * CHP 2020
+ */
+
+.container {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.adjust_alignment {
+  justify-content: flex-end !important;
+}
+
+li.nav-item {
+  margin: 0px 10px;
+}
+
+.bc_banner {
+  background: #8a100b no-repeat 100% 0%;
+  border-bottom: 5px solid #dccaa0;
+  min-height: 40px;
+  padding: 10px 0px;
+}
+
+.mainmap {
+  background-color: gray;
+}
+
+.bc_footer {
+  background: #8a100b no-repeat 100% 0%;
+  border-top: 5px solid #dccaa0;
+  min-height: 40px;
+  padding: 10px 0px;
+  color: #fff;
+}
+
+.bclib-header-logo p {
+  text-indent: -9999px;
+  float: left;
+}
+
+.btn-locate {
+  background: #fff;
+  color: #8a100b;
+}
+
+.map_img {
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .adjust_alignment {
+    justify-content: center !important;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: inline-block;
+  }
+  li.nav-item {
+    margin: 10px auto;
+  }
+}

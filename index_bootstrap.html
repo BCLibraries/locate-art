@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>O'Neill Library Shelf Location Chart</title>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">  
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/custom.css"> 
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/768ae6e528.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="myscript25t.js?version=1.9a"></script>
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <header class="bc_banner">
+    <div class="container">
+        
+        <div class="row">
+
+            <div class="col-md-12 col-lg-4 adjust_alignment">
+                <a href="https://library.bc.edu/" title="Go to Boston College Libraries" class="bclib-header-logo">
+                    <img src="./img/bc_header_title.png" id="fakebctitle-old" alt="Boston College Library Logo">
+                    <p>Boston College Libraries</p>
+                </a>
+            </div>
+
+            <div class="col-md-12 col-lg-8">
+                <ul class="nav adjust_alignment">
+                    <li class="nav-item ">
+                        <button class="nav-link btn btn-locate" data-toggle="modal" data-target="#textphone">
+                        <i class="fas fa-mobile-alt"></i> Text to Your Cell Phone</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link btn btn-locate" data-toggle="modal" data-target="#sendfeedback">
+                        <i class="fas fa-comment-dots"></i> Send Feedback</button>
+                    </li>
+                    <li class="nav-item"> 
+                    <button class="nav-link btn btn-locate"  data-toggle="modal" data-target="#aboutlocate">
+                    <i class="fas fa-question-circle" ></i> About <em>Locate!</em></button></li>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    </header>
+
+    <main class="mainmap">
+        <div class="container">
+            <div class="map_img">
+                <img id="floorpic" src="ONL_3R_20130313_L.jpg">
+            </div>
+        </div>
+    </main>
+
+    <footer class="bc_footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-10">
+                <p class="copyright">Copyright &copy; 2020 Trustees of Boston College</p>
+            </div>
+            <div class="col-2">
+                <p>Locate! v2.5</p>
+            </div>
+        </div>
+    </div>
+    </footer>
+
+  <!-- Modals -->
+
+  <!-- TEXT YOUR PHONE -->
+    <div class="modal fade" id="textphone" tabindex="-1" role="dialog" aria-labelledby="modaltitle_phone" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="modaltitle_phone">Send a text to your phone</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <form name="smsform">
+
+                    (<input name="ac" type="text" size="2" onKeyDown="TabNext(this,'down',3)" onKeyUp="TabNext(this,'up',3,this.form.exchange)" placeholder="000">)
+        
+                    <input name="exchange" type="text" size="2" onKeyDown="TabNext(this,'down',3)" onKeyUp="TabNext(this,'up',3,this.form.telno)" placeholder="000">-<input name="telno" type="text" size="2" placeholder="0000">
+        
+                    <input type="hidden" id="idtext" name="textmessage" value="QL737.C25 C44 1993 Otters / is in the O'Neill Library, Floor 3, Shelf 81">
+        
+                    <button class="btn btn-primary" onclick="startRequest('*')">SEND</button>
+                </form>
+        
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- END PHONE -->
+
+    <!-- FEEDBACK
+        whats the best way to do this?
+    -->
+    <div class="modal fade" id="sendfeedback" tabindex="-1" role="dialog" aria-labelledby="modaltitle_feedback" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="modaltitle_feedback">Send Feedback</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            ...
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- END FEEDBACK -->
+
+
+    <!-- ABOUT LOCATE MODAL -->
+    <div class="modal fade" id="aboutlocate" tabindex="-1" role="dialog" aria-labelledby="modaltitle_locate" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modaltitle_locate">Locate Items in the O'Neill Library</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam sem tristique dui malesuada, a faucibus justo aliquam. Donec accumsan consequat erat. Fusce at risus in sapien fermentum interdum a vitae tellus. Fusce quis ligula a diam pharetra euismod et non dui. Morbi dapibus felis eget pellentesque tristique. Vestibulum efficitur orci ac luctus posuere. Aenean sed nunc odio. Aenean in vehicula est, vel ultricies lorem. Maecenas leo purus, vestibulum ac odio eget, tristique tincidunt purus. Morbi leo neque, volutpat non facilisis nec, tempor non massa. In dapibus ex quis nibh tempor condimentum id et diam. Fusce vel nibh tellus. Donec rutrum congue nunc et pellentesque. Quisque ex mauris, ultricies quis risus a, mollis bibendum eros.</p>
+
+        <p>Nam ac convallis erat. Integer pharetra massa et erat tempus, sed tempor dui posuere. Nam ligula libero, congue quis aliquet eu, finibus a dui. Morbi iaculis urna in massa placerat, non consectetur lectus venenatis. Maecenas feugiat sodales magna, at efficitur quam placerat ac. Suspendisse ex nunc, blandit in neque non, sollicitudin vulputate felis. Etiam vel eleifend erat. Quisque eget nisl leo. Praesent consectetur sit amet purus ac porttitor. Duis justo nunc, auctor vel commodo ac, condimentum in eros. Aenean sit amet lobortis nulla, sed vestibulum lectus. Vestibulum vitae dui bibendum, imperdiet nisi at, vestibulum mauris. Nam a efficitur nunc. Quisque eget ipsum placerat, auctor mi sed, iaculis mi.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- END ABOUT LOCATE -->
+
+</div>
+</body>
+</html>
