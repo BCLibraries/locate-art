@@ -40,6 +40,10 @@ li.nav-item {
   color: #fff;
 }
 
+.copyright {
+  font-style: italic;
+}
+
 .bclib-header-logo p {
   text-indent: -9999px;
   float: left;
@@ -50,8 +54,18 @@ li.nav-item {
   color: #8a100b;
 }
 
+.btn-cell {
+  width: 50%;
+  margin: 0;
+  float: right;
+}
+
 .map_img {
   text-align: center;
+}
+
+.map_img img {
+  max-width: 100%;
 }
 
 @media (max-width: 992px) {
@@ -59,13 +73,9 @@ li.nav-item {
     justify-content: center !important;
     text-align: center;
   }
-}
-
-@media (max-width: 768px) {
-  .nav {
-    display: inline-block;
-  }
-  li.nav-item {
-    margin: 10px auto;
+  .btn-cell {
+    width: 90%;
+    margin: 0 auto;
+    float: none;
   }
 }

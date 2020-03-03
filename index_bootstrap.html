@@ -31,20 +31,7 @@
             </div>
 
             <div class="col-md-12 col-lg-8">
-                <ul class="nav adjust_alignment">
-                    <li class="nav-item ">
-                        <button class="nav-link btn btn-locate" data-toggle="modal" data-target="#textphone">
-                        <i class="fas fa-mobile-alt"></i> Text to Your Cell Phone</button>
-                    </li>
-                    <li class="nav-item">
-                        <button class="nav-link btn btn-locate" data-toggle="modal" data-target="#sendfeedback">
-                        <i class="fas fa-comment-dots"></i> Send Feedback</button>
-                    </li>
-                    <li class="nav-item"> 
-                    <button class="nav-link btn btn-locate"  data-toggle="modal" data-target="#aboutlocate">
-                    <i class="fas fa-question-circle" ></i> About <em>Locate!</em></button></li>
-
-                </ul>
+                <button class="nav-link btn btn-locate btn-cell" data-toggle="modal" data-target="#textphone"><i class="fas fa-mobile-alt"></i> Text to Your Cell Phone</button>
             </div>
 
         </div>
@@ -62,12 +49,21 @@
     <footer class="bc_footer">
     <div class="container">
         <div class="row">
-            <div class="col-10">
+            <div class="col-md-12 col-lg-4 adjust_alignment">
                 <p class="copyright">Copyright &copy; 2020 Trustees of Boston College</p>
             </div>
-            <div class="col-2">
-                <p>Locate! v2.5</p>
-            </div>
+            <div class="col-md-12 col-lg-8">
+                <ul class="nav adjust_alignment">
+                   <li class="nav-item">
+                        <a role="button" class="nav-link btn btn-locate" href="https://library.bc.edu/feedback/" target="_blank">
+                        <i class="fas fa-comment-dots"></i> Send Feedback</a>
+                    </li>
+                    <li class="nav-item"> 
+                        <button class="nav-link btn btn-locate"  data-toggle="modal" data-target="#aboutlocate">
+                        <i class="fas fa-question-circle" ></i> About <em>Locate! v2.5</em></button>
+                    </li>
+                </ul>
+              </div>
         </div>
     </div>
     </footer>
@@ -104,30 +100,6 @@
         </div>
     </div>
     <!-- END PHONE -->
-
-    <!-- FEEDBACK
-        whats the best way to do this?
-    -->
-    <div class="modal fade" id="sendfeedback" tabindex="-1" role="dialog" aria-labelledby="modaltitle_feedback" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="modaltitle_feedback">Send Feedback</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            <div class="modal-body">
-            ...
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-        </div>
-    </div>
-    <!-- END FEEDBACK -->
-
 
     <!-- ABOUT LOCATE MODAL -->
     <div class="modal fade" id="aboutlocate" tabindex="-1" role="dialog" aria-labelledby="modaltitle_locate" aria-hidden="true">
